@@ -28,3 +28,5 @@ RUN julia -O3 -e 'using Pkg;Pkg.REPLMode.pkgstr("add  IntervalSets    ;precompil
 RUN julia -O3 -e 'using Pkg;Pkg.REPLMode.pkgstr("add  Query    ;precompile");using Query '
 RUN julia -O3 -e 'using Pkg;Pkg.REPLMode.pkgstr("add  Statistics    ;precompile");using Statistics '
 RUN julia -O3 -e 'using Pkg;Pkg.REPLMode.pkgstr("add  StringDistances    ;precompile");using StringDistances '
+RUN julia -O3 -e 'using Pkg;Pkg.REPLMode.pkgstr("add  StatsBase    ;precompile");using StatsBase '
+
