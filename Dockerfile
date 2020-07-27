@@ -14,7 +14,3 @@ RUN set -eux; \
 	rm -rf /var/lib/apt/lists/*
 
 RUN julia install.jl
-RUN julia -e 'using Pkg; for pkg in collect(keys(Pkg.installed()))
-Base.compilecache(Base.identify_package(pkg))
-    end'
-RUN chmod -R a+rX $JULIA_DEPOT_PATH
