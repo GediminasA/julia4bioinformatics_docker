@@ -13,4 +13,4 @@ RUN set -eux; \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
-RUN julia -O3 -e ' using Pkg;Pkg.REPLMode.pkgstr("add  https://github.com/kmsquire/ArgParse2.jl    ;precompile") ; using ArgParse2 '
+RUN julia install.jl
