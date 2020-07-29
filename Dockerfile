@@ -77,12 +77,10 @@ RUN find /opt -type f -print0 | xargs -0 chmod a+r
 RUN chmod a+rx /opt/bin/julia
 RUN chmod a+rx /usr/bin/julia
 RUN chmod a+rx /usr/bin/no_sysimage_julia
-RUN curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-4.5.12-Linux-x86_64.sh -o /tmp/miniconda.sh \
+RUN curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh -o /tmp/miniconda.sh \
     && bash /tmp/miniconda.sh -bfp /usr/local \
     && rm -rf /tmp/miniconda.sh \
     && conda install -y python=3 \
-    && conda update conda \
     && conda clean --all --yes
-
 ENV PATH /opt/conda/bin:$PATH
 ENTRYPOINT ["/bin/bash", "-c"]
