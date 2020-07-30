@@ -84,4 +84,4 @@ RUN curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x8
     && conda install -y -c conda-forge mamba \
     && conda clean --all --yes
 ENV PATH /opt/conda/bin:$PATH
-ENTRYPOINT ["/bin/bash", "-c"]
+ENTRYPOINT ["/usr/bin/julia"]
