@@ -1,5 +1,6 @@
 import Pkg
 Pkg.add(Pkg.Types.PackageSpec[Pkg.PackageSpec(; name = "ArgParse", ), Pkg.PackageSpec(; name = "CSV", ), Pkg.PackageSpec(; name = "Clustering", ), Pkg.PackageSpec(; name = "CodecZlib", ), Pkg.PackageSpec(; name = "DataFramesMeta", ), Pkg.PackageSpec(; name = "DataFrames", ), Pkg.PackageSpec(; name = "DataStructures", ), Pkg.PackageSpec(; name = "FASTX", ), Pkg.PackageSpec(; name = "FastaIO", ), Pkg.PackageSpec(; name = "IntervalSets", ), Pkg.PackageSpec(; name = "OrderedCollections", ), Pkg.PackageSpec(; name = "Query", ), Pkg.PackageSpec(; name = "Statistics", ), Pkg.PackageSpec(; name = "StringDistances", ), Pkg.PackageSpec(; name = "StatsBase", ), Pkg.PackageSpec(; name = "TextWrap", ), Pkg.PackageSpec(; rev = "workaround_23", name = "XAM", )])
+Pkg.add("https://github.com/kmsquire/ArgParse2.jl")
 for name in String[] # pkg_names_to_test
 Pkg.add(name)
 Pkg.test(name)
