@@ -28,7 +28,7 @@ julia_version = v"1.4.0"
 
 SimpleContainerGenerator.create_dockerfile(pkgs,
                                            pwd();
-                                           julia_version = julia_version,no_test=["Query","Statistics","StringDistances","StatsBase","FastaIO","IntervalSets","Clustering","CodecZlib","CSV","TextWrap","OrderedCollections","CodecZlib","DataFramesMeta","DataFrames","DataStructures","FASTX","XAM","ArgParse", "ArgParse2"])
+                                           julia_version = julia_version,no_test=["Query","Statistics","StringDistances","StatsBase","FastaIO","IntervalSets","Clustering","CodecZlib","CSV","TextWrap","OrderedCollections","CodecZlib","DataFramesMeta","DataFrames","DataStructures","FASTX","XAM","ArgParse"])
 
 println("check the julia4bioinf/simplecontainergenerator_container_files/install_packages.jl ; cd julia4bioinf;  run docker build -t galzbutas/julia4bioinf .")
 
