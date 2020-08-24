@@ -15,7 +15,6 @@ import StringDistances # pkg_names_to_import
 import StatsBase # pkg_names_to_import
 import TextWrap # pkg_names_to_import
 import XAM # pkg_names_to_import
-import ArgParse2
 
 import Pkg
 for (uuid, info) in Pkg.dependencies()
