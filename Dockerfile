@@ -57,6 +57,7 @@ RUN chmod 444 /opt/etc/julia/startup.jl
 RUN chmod 555 /usr/bin/julia
 RUN chmod 555 /usr/bin/no_sysimage_julia
 RUN cd /tmp && JULIA_DEBUG=all SIMPLECONTAINERGENERATOR_CONTAINER_NO_TEMP_DEPOT="true" /usr/bin/no_sysimage_julia /opt/simplecontainergenerator_containers/install_packages.jl
+RUN JULIA_DEBUG=all /usr/bin/no_sysimage_julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(; url = "https://github.com/kmsquire/ArgParse2.jl", name = "ArgParse2",)); Pkg.resolve()'
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/backups_of_simplecontainergenerator_1.jl
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/backups_of_simplecontainergenerator_2.jl
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/packagecompiler_install.jl
@@ -77,7 +78,6 @@ RUN find /opt -type f -print0 | xargs -0 chmod a+r
 RUN chmod a+rx /opt/bin/julia
 RUN chmod a+rx /usr/bin/julia
 RUN chmod a+rx /usr/bin/no_sysimage_julia
-RUN JULIA_DEBUG=all /usr/bin/julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(; url = "https://github.com/kmsquire/ArgParse2.jl", name = "ArgParse2",)); Pkg.resolve()'
 RUN curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh -o /tmp/miniconda.sh \
     && bash /tmp/miniconda.sh -bfp /usr/local \
     && rm -rf /tmp/miniconda.sh \
