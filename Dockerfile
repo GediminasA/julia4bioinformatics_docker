@@ -58,7 +58,7 @@ RUN chmod 555 /usr/bin/julia
 RUN chmod 555 /usr/bin/no_sysimage_julia
 RUN cd /tmp && JULIA_DEBUG=all SIMPLECONTAINERGENERATOR_CONTAINER_NO_TEMP_DEPOT="true" /usr/bin/no_sysimage_julia /opt/simplecontainergenerator_containers/install_packages.jl
 RUN JULIA_DEBUG=all /usr/bin/no_sysimage_julia -e 'import Pkg; Pkg.add(Pkg.PackageSpec(; url = "https://github.com/kmsquire/ArgParse2.jl", name = "ArgParse2",)); Pkg.resolve()'
-RUN JULIA_DEBUG=all /usr/bin/no_sysimage_julia -e 'import Pkg; Pkg.add("LightXML"); Pkg.add("Coverage"); Pkg.add("TestSetExtensions"); Pkg.add("Suppressor"); Pkg.add("Suppressor")'
+RUN JULIA_DEBUG=all /usr/bin/no_sysimage_julia -e 'import Pkg; Pkg.add("LightXML"); Pkg.add("Coverage"); Pkg.add("TestSetExtensions"); Pkg.add("Suppressor")'
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/backups_of_simplecontainergenerator_1.jl
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/backups_of_simplecontainergenerator_2.jl
 RUN cd /tmp && JULIA_DEBUG=all /opt/bin/julia /opt/simplecontainergenerator_containers/packagecompiler_install.jl
