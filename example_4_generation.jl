@@ -4,6 +4,10 @@ mkpath("julia4bioinf")
 cd("julia4bioinf")
 
 pkgs = [
+	(name = "LightXML",),
+	(name = "Coverage",),
+	(name = "TestSetExtensions",),
+	(name = "Suppressor",),
 	(name = "ArgParse",),
 	(name = "CSV",),
 	(name = "Clustering",),
@@ -28,7 +32,6 @@ julia_version = v"1.4.0"
 
 SimpleContainerGenerator.create_dockerfile(pkgs,
                                            pwd();
-                                           julia_version = julia_version,no_test=["Query","Statistics","StringDistances","StatsBase","FastaIO","IntervalSets","Clustering","CodecZlib","CSV","TextWrap","OrderedCollections","CodecZlib","DataFramesMeta","DataFrames","DataStructures","FASTX","XAM","ArgParse"])
+                                           julia_version = julia_version,no_test=["Query","Statistics","StringDistances","StatsBase","FastaIO","IntervalSets","Clustering","CodecZlib","CSV","TextWrap","OrderedCollections","CodecZlib","DataFramesMeta","DataFrames","DataStructures","FASTX","XAM","ArgParse","Suppressor","TestSetExtensions","Coverage","LightXML"])
 
 println("check the julia4bioinf/simplecontainergenerator_container_files/install_packages.jl ; cd julia4bioinf;  run docker build -t galzbutas/julia4bioinf .")
-

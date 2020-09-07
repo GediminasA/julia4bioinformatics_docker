@@ -15,6 +15,10 @@ import StringDistances # pkg_names_to_import
 import StatsBase # pkg_names_to_import
 import TextWrap # pkg_names_to_import
 import XAM # pkg_names_to_import
+import Suppressor
+import TestSetExtensions
+import Coverage
+import LightXML
 
 import Pkg
 for (uuid, info) in Pkg.dependencies()
